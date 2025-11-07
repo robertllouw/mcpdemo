@@ -26,6 +26,27 @@ const getChuckJoke = server.tool(
   }
 );
 
+// Get random color tool
+const getRandomColor = server.tool(
+  "get-random-color",
+  "Get a random color",
+  async () => {
+    const colors = ["red", "blue", "green", "purple", "orange", "teal", "pink", "yellow"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Your random color is: ${randomColor}`,
+        },
+      ],
+    };
+  }
+);
+
+
+
 // Get Chuck Norris joke by category tool
 const getChuckJokeByCategory = server.tool(
   "get-chuck-joke-by-category",
