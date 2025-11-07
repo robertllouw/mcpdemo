@@ -27,18 +27,18 @@ const getChuckJoke = server.tool(
 );
 
 // Get random color tool
-const getRandomColor = server.tool(
-  "get-random-color",
-  "Get a random color",
+const getRandomColour = server.tool(
+  "get-random-colour",
+  "Get a random colour",
   async () => {
     const colors = ["red", "blue", "green", "purple", "orange", "teal", "pink", "yellow"];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    const randomColour = colors[Math.floor(Math.random() * colors.length)];
 
     return {
       content: [
         {
           type: "text",
-          text: `Your random color is: ${randomColor}`,
+          text: `Your random color is: ${randomColour}`,
         },
       ],
     };
